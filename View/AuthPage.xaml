@@ -1,0 +1,24 @@
+﻿<Page x:Class="TaskManagerClient.AuthPage"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:TaskManagerClient"
+        xmlns:vm="clr-namespace:TaskManagerClient.ViewModel"
+        mc:Ignorable="d"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+        Title="MainWindow" Height="325.112" Width="314.582">
+    <Page.DataContext>
+        <vm:AuthViewModel/>
+    </Page.DataContext>
+    <Grid Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="0,0,0,-7" >
+            <StackPanel Orientation="Vertical" Margin="10,10,20,10">
+                <TextBlock Text="Авторизация" HorizontalAlignment="Center" Margin="0,20,0,20" FontSize="18" FontWeight="Bold" FontFamily="Wide Latin"/>
+                <TextBlock Text="Логин:" FontSize="16"  Style="{StaticResource MaterialDesignTextBlock}"/>
+            <TextBox Text="{Binding Path=Login}" FontSize="16" materialDesign:HintAssist.Hint="Введите логин"   Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{Binding Path=CheckLogin}" Margin="0,-10,0,20"/>
+                <TextBlock  Text="Пароль:" FontSize="16" Style="{StaticResource MaterialDesignTextBlock}"/>
+            <PasswordBox  x:Name="PasswordBox"   FontSize="16" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}"  Background="{Binding Path=CheckPassword}" Margin="0,0,0,20" />
+                <Button  Command="{Binding SendToServer}" CommandParameter="{Binding ElementName=PasswordBox}" Width="120"  Style="{StaticResource  MaterialDesignFlatDarkBgButton}">Авторизация</Button>
+            </StackPanel>
+    </Grid>
+</Page>
