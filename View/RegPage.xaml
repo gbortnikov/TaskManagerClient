@@ -7,7 +7,7 @@
         mc:Ignorable="d"
         xmlns:vm="clr-namespace:TaskManagerClient.ViewModel"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
-        Title="AuthWindow" Height="312.638" Width="341.964">
+        Title="AuthWindow" Height="328.638" Width="341.964">
     <Page.DataContext>
         <vm:RegViewModel/>
     </Page.DataContext>
@@ -15,13 +15,14 @@
         <StackPanel  Orientation="Vertical"  >
         <TextBlock Margin="0,10,0,10" Text="Регистрация" HorizontalAlignment="Center" Style="{StaticResource MaterialDesignHeadline6TextBlock}"/>
 
-            <TextBlock Text="Логин:"/>
-            <TextBox Text="{Binding Path=Login}" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{Binding Path=CheckLogin}" Margin="0,-10,0,20"/>
-            <TextBlock Text="Пароль"/>
-            <PasswordBox x:Name="PasswordBox" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Background="{Binding Path=CheckPassword}" Margin="0,0,0,20"/>
-            <TextBlock Text="Email:"/>
-            <TextBox   Text="{Binding Path=Email}" materialDesign:HintAssist.Hint="Введите Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-10,0,10"/>
+            <TextBlock Text="Логин:" FontSize="16"/>
+            <TextBox Text="{Binding Path=Login}" FontSize="16" materialDesign:HintAssist.Hint="Введите логин" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Background="{Binding Path=CheckLogin}" Margin="0,-10,0,20"/>
+            <TextBlock Text="Пароль:" FontSize="16"/>
+            <PasswordBox x:Name="PasswordBox" FontSize="16" materialDesign:HintAssist.Hint="Введите пароль" Style="{StaticResource MaterialDesignFloatingHintPasswordBox}" Background="{Binding Path=CheckPassword}" Margin="0,0,0,20"/>
+            <TextBlock Text="Email:" FontSize="16"/>
+            <TextBox   Text="{Binding Path=Email}" FontSize="16" materialDesign:HintAssist.Hint="Введите Email" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-10,0,10"/>
             <Button  Command="{Binding SendToServer}" CommandParameter="{Binding ElementName=PasswordBox}" Width="120"  Style="{StaticResource  MaterialDesignFlatDarkBgButton}">Регистрация</Button>
+            
         </StackPanel>
     </Grid>
 </Page>

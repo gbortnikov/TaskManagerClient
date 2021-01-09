@@ -10,17 +10,16 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
-using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TaskManagerClient.View
 {
     /// <summary>
-    /// Логика взаимодействия для InfoUser.xaml
+    /// Логика взаимодействия для InfoUserWindow.xaml
     /// </summary>
-    public partial class InfoUser : Page
+    public partial class InfoUserWindow : Window
     {
-        public InfoUser()
+        public InfoUserWindow()
         {
             InitializeComponent();
         }

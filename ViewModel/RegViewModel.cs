@@ -3,6 +3,7 @@ using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Input;
 using TaskManagerClient.Model;
+using TaskManagerClient.View;
 
 namespace TaskManagerClient.ViewModel
 {
@@ -106,15 +107,19 @@ namespace TaskManagerClient.ViewModel
                         }
 
                         Console.WriteLine("status={0}", RegStatus.status);
-                        if (RegStatus.status == -1)
+                        if (RegStatus.status == 1)
                         {
-                            CheckLogin = "#FF7257";
+                            InfoUserWindow infoWin = new InfoUserWindow();
+                            infoWin.Show();
                         }
+                        else if (RegStatus.status == -1)
+                            CheckLogin = "#FF7257";
+                        else
+                            CheckPassword = "#FF7257";
                     }
-                    else
-                        CheckPassword = "#FF7257";
                 });
             }
         }
+
     }
 }

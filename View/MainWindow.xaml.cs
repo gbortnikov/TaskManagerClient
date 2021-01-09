@@ -11,6 +11,7 @@ using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
 using System.Windows.Shapes;
+using TaskManagerClient.ViewModel;
 
 namespace TaskManagerClient.View
 {
@@ -22,6 +23,10 @@ namespace TaskManagerClient.View
         public MainWindow()
         {
             InitializeComponent();
+            MainViewModel vm = new MainViewModel(); // this creates an instance of the ViewModel
+            this.DataContext = vm; // this sets the newly created ViewModel as the DataContext for the View
+            if (vm.CloseAction == null)
+                vm.CloseAction = new Action(() => this.Close());
         }
     }
 }

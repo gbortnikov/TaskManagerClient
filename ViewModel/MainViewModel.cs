@@ -1,11 +1,18 @@
-﻿using System.Windows.Controls;
+﻿using System;
+using System.Threading;
+using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
+using TaskManagerClient.Model;
 using TaskManagerClient.View;
 
 namespace TaskManagerClient.ViewModel
 {
     class MainViewModel : BaseViewModel
     {
+        public Action CloseAction { get; set; }
+
+
         private AuthPage authPage;
         private RegPage regPage;
         private Page currentPage;
@@ -21,7 +28,8 @@ namespace TaskManagerClient.ViewModel
                 OnPropertyChanged("CurrentPage");
             }
         }
-        private string btnContent= "Регистрация";
+
+        private string btnContent = "Регистрация";
         public string BtnContent
         {
             get
@@ -55,6 +63,23 @@ namespace TaskManagerClient.ViewModel
                 });
             }
         }
+
+
+
+
+
+
+        public ICommand Close
+        {
+            get
+            {
+                return new DelegateCommand((args) =>
+                {
+                    CloseAction();
+                });
+            }
+        }
+
 
 
         public MainViewModel()

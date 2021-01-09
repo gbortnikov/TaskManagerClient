@@ -17,6 +17,10 @@ namespace TaskManagerClient.Model
             json = JsonConvert.SerializeObject(reg, Formatting.Indented);
         }
 
+        public JConvert(Info info)
+        {
+            json = JsonConvert.SerializeObject(info, Formatting.Indented);
+        }
 
 
 
