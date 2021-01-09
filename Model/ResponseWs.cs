@@ -20,6 +20,11 @@ namespace TaskManagerClient.Model
             {
                 RegStatus.status = int.Parse(answer["status"]);
             }
+            else if (answer["command"] == "INFO")
+            {
+                InfoStatus.status = int.Parse(answer["status"]);
+            }
+
 
         }
     }

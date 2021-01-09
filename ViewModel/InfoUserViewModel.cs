@@ -2,17 +2,23 @@
 using System.Collections.Generic;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
 using TaskManagerClient.Model;
 
 namespace TaskManagerClient.ViewModel
 {
-    public struct DateOfBirth
+    static public class InfoStatus
     {
-        public int day;
-        public int mounth;
-        public int year;
+        static public string command;
+        static public int status;
+    }
+    public class DateOfBirth
+    {
+        public int day=1;
+        public int mounth=1;
+        public int year=1995;
         public string GetDate()
         {
             DateTime dateTime = new DateTime(year,mounth,day);
@@ -21,7 +27,7 @@ namespace TaskManagerClient.ViewModel
     }
     public class Info
     {
-        //public DateOfBirth dateOfBirth;
+        public string command = "INFO";
         public string name;
         public string surname;
         public int age;
@@ -38,6 +44,12 @@ namespace TaskManagerClient.ViewModel
     {
         Info info = new Info();
         DateOfBirth dateOfBirth = new DateOfBirth();
+        private WSocClient wSocClient;
+
+        public InfoUserViewModel()
+        {
+            wSocClient = WSocClient.getInstance();
+        }
 
         public int Day
         {
@@ -125,6 +137,11 @@ namespace TaskManagerClient.ViewModel
                     info.GetDate();
                     JConvert infoJson = new JConvert(info);
                     Console.WriteLine(infoJson.Json);
+                    wSocClient.Send(infoJson.Json);
+                    //while (InfoStatus.status == 0)
+                    //{
+                    //    Thread.Sleep(5);
+                    //}
 
                 });
             }
