@@ -7,20 +7,6 @@ using TaskManagerClient.Model;
 
 namespace TaskManagerClient.ViewModel
 {
-    class Auth
-    {
-        public string command = "AUTH";
-        public string login;
-        public string password;
-        public string checkLogin;
-        public string checkPassword;
-    }
-
-    static public class AuthStatus
-    {
-        static public string command;
-        static public int status;
-    }
 
     class AuthViewModel : BaseViewModel
     {
@@ -84,6 +70,7 @@ namespace TaskManagerClient.ViewModel
                         CheckLogin = "#FF7257";
                     if (AuthStatus.status == -1)
                         CheckPassword = "#FF7257";
+                    AuthStatus.status = 0;
                 });
             }
         }

@@ -8,22 +8,6 @@ using TaskManagerClient.View;
 
 namespace TaskManagerClient.ViewModel
 {
-    static public class RegStatus
-    {
-        static public string command;
-        static public int status;
-    }
-    class Reg
-    {
-        public string command = "REG";
-        public string login;
-        public string password;
-        public string email;
-        public string checkLogin;
-        public string checkPassword;
-
-    }
-
     class RegViewModel : BaseViewModel
     {
         private Reg reg = new Reg();

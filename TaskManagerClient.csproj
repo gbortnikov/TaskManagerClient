@@ -165,9 +165,11 @@
       <SubType>Designer</SubType>
     </ApplicationDefinition>
     <Compile Include="BasicClasses\JConvert.cs" />
+    <Compile Include="Model\ModelAuth.cs" />
     <Compile Include="Model\ModelInfoUser.cs" />
     <Compile Include="BasicClasses\ResponseWs.cs" />
     <Compile Include="BasicClasses\WSocClient.cs" />
+    <Compile Include="Model\ModelReg.cs" />
     <Compile Include="ViewModel\AuthViewModel.cs" />
     <Compile Include="ViewModel\BaseViewModel.cs" />
     <Compile Include="ViewModel\DelegateCommand.cs" />

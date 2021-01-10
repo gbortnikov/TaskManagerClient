@@ -25,8 +25,6 @@ namespace TaskManagerClient.BasicClasses
             {
                 InfoStatus.status = int.Parse(answer["status"]);
             }
-
-
         }
     }
 
