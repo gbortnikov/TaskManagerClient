@@ -1,9 +1,10 @@
 ﻿using Newtonsoft.Json;
 using System;
 using System.Collections.Generic;
+using TaskManagerClient.Model;
 using TaskManagerClient.ViewModel;
 
-namespace TaskManagerClient.Model
+namespace TaskManagerClient.BasicClasses
 {
 
     class ResponseWs

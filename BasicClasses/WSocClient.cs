@@ -3,7 +3,7 @@ using System;
 using System.Threading;
 using WebSocket4Net;
 
-namespace TaskManagerClient.Model
+namespace TaskManagerClient.BasicClasses
 {
     class WSocClient
     {

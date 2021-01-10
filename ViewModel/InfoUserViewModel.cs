@@ -5,40 +5,11 @@ using System.Text;
 using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Input;
+using TaskManagerClient.BasicClasses;
 using TaskManagerClient.Model;
 
 namespace TaskManagerClient.ViewModel
 {
-    static public class InfoStatus
-    {
-        static public string command;
-        static public int status;
-    }
-    public class DateOfBirth
-    {
-        public int day=1;
-        public int mounth=1;
-        public int year=1995;
-        public string GetDate()
-        {
-            DateTime dateTime = new DateTime(year,mounth,day);
-            return dateTime.ToString();
-        }
-    }
-    public class Info
-    {
-        public string command = "INFO";
-        public string name;
-        public string surname;
-        public int age;
-        public bool gender;
-        public string birthDate;
-        public string dateReg;
-        public void GetDate()
-        {
-            this.dateReg= DateTime.Now.ToString();
-        }
-    }
 
     class InfoUserViewModel : BaseViewModel
     {
@@ -107,15 +78,6 @@ namespace TaskManagerClient.ViewModel
             }
         }
 
-        public int Age
-        {
-            get { return info.age; }
-            set
-            {
-                info.age = value;
-                OnPropertyChanged();
-            }
-        }
 
         public bool Gender
         {
@@ -133,15 +95,25 @@ namespace TaskManagerClient.ViewModel
             {
                 return new DelegateCommand((args) =>
                 {
+                    var age = info.GetDateReg().Year - dateOfBirth.GetDate().Year;
+
+                    if (info.GetDateReg().Month - dateOfBirth.GetDate().Month < 0)
+                        age -= 1;
+                    else if (info.GetDateReg().Month - dateOfBirth.GetDate().Month == 0)
+                        if (info.GetDateReg().Day - dateOfBirth.GetDate().Day < 0)
+                            age -= 1;
+
                     info.birthDate = dateOfBirth.GetDate().ToString();
-                    info.GetDate();
+                    info.dateReg = info.GetDateReg().ToString();
+                    info.age = age;
+
                     JConvert infoJson = new JConvert(info);
                     Console.WriteLine(infoJson.Json);
                     wSocClient.Send(infoJson.Json);
-                    //while (InfoStatus.status == 0)
-                    //{
-                    //    Thread.Sleep(5);
-                    //}
+                    while (InfoStatus.status == 0)
+                    {
+                        Thread.Sleep(5);
+                    }
 
                 });
             }

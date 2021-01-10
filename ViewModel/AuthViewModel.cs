@@ -2,6 +2,7 @@
 using System.Threading;
 using System.Windows.Controls;
 using System.Windows.Input;
+using TaskManagerClient.BasicClasses;
 using TaskManagerClient.Model;
 
 namespace TaskManagerClient.ViewModel

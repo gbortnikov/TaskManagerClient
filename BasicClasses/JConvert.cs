@@ -1,7 +1,8 @@
 ﻿using Newtonsoft.Json;
+using TaskManagerClient.Model;
 using TaskManagerClient.ViewModel;
 
-namespace TaskManagerClient.Model
+namespace TaskManagerClient.BasicClasses
 {
     class JConvert
     {
