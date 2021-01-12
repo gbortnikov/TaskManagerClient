@@ -164,6 +164,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
+    <Compile Include="BasicClasses\Global.cs" />
     <Compile Include="BasicClasses\JConvert.cs" />
     <Compile Include="Model\ModelAuth.cs" />
     <Compile Include="Model\ModelInfoUser.cs" />
@@ -176,8 +177,13 @@
     <Compile Include="ViewModel\InfoUserViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RegViewModel.cs" />
+    <Compile Include="ViewModel\StaffViewModel.cs" />
+    <Compile Include="ViewModel\WorlSpaceViewModel.cs" />
     <Compile Include="View\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\InfoUserPage.xaml.cs">
+      <DependentUpon>InfoUserPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\InfoUserWindow.xaml.cs">
       <DependentUpon>InfoUserWindow.xaml</DependentUpon>
@@ -192,9 +198,19 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
+    <Compile Include="View\staffPage.xaml.cs">
+      <DependentUpon>staffPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WorkSpace.xaml.cs">
+      <DependentUpon>WorkSpace.xaml</DependentUpon>
+    </Compile>
     <Page Include="View\AuthPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\InfoUserPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\InfoUserWindow.xaml">
       <SubType>Designer</SubType>
@@ -207,6 +223,14 @@
     <Page Include="View\RegPage.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\staffPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WorkSpace.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>
   <ItemGroup>

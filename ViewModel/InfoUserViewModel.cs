@@ -106,6 +106,8 @@ namespace TaskManagerClient.ViewModel
                     info.birthDate = dateOfBirth.GetDate().ToString();
                     info.dateReg = info.GetDateReg().ToString();
                     info.age = age;
+                    info.login = Global.myLogin;
+
 
                     JConvert infoJson = new JConvert(info);
                     Console.WriteLine(infoJson.Json);

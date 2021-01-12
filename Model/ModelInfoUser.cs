@@ -20,15 +20,16 @@ namespace TaskManagerClient.Model
         {
             DateTime dateTime = new DateTime(year, mounth, day);
             return dateTime;
-        }
+        } 
     }
     public class Info
     {
+        public string login;
         public string command = "INFO";
         public string name;
         public string surname;
         public int age;
-        public bool gender;
+        public bool gender =true;
         public string birthDate;
         public string dateReg;
         public DateTime GetDateReg()

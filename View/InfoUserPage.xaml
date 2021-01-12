@@ -1,0 +1,37 @@
+﻿<Page x:Class="TaskManagerClient.View.InfoUserPage"
+      xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+      xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+      xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+      xmlns:local="clr-namespace:TaskManagerClient.View"
+      mc:Ignorable="d" 
+             xmlns:vm="clr-namespace:TaskManagerClient.ViewModel"
+        xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
+      Width="600" Height="450"
+      Title="InfoUserPage">
+    <Page.DataContext>
+        <vm:InfoUserViewModel/>
+    </Page.DataContext>
+
+    <Grid   Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
+        <StackPanel Margin="20,20,20,0">
+            <TextBlock Text="Имя:"/>
+            <TextBox   Text="{Binding Path=Name}" materialDesign:HintAssist.Hint="Введите Имя" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-10,0,10"/>
+            <TextBlock Text="Фамилия:"/>
+            <TextBox   Text="{Binding Path=SurName}" materialDesign:HintAssist.Hint="Введите Фамилию" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-10,0,10"/>
+
+            <TextBlock Text="Дата рождения:"/>
+            <StackPanel Orientation="Horizontal">
+                <TextBox   Text="{Binding Path=Day}" materialDesign:HintAssist.Hint="день" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-10,10,10"/>
+                <TextBox   Text="{Binding Path=Mounth}" materialDesign:HintAssist.Hint="месяц" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-10,10,10"/>
+                <TextBox   Text="{Binding Path=Year}" materialDesign:HintAssist.Hint="год" Style="{StaticResource MaterialDesignFloatingHintTextBox}" Margin="0,-10,10,10"/>
+            </StackPanel>
+            <TextBlock Text="Пол:"/>
+            <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
+                <RadioButton GroupName="gender" Content="Женский" IsChecked="{Binding Path=Gender}"/>
+                <RadioButton GroupName="gender" Content="Мужской"  Margin="50,0,0,0"/>
+            </StackPanel>
+            <Button  Command="{Binding SendToServer}"  Width="120"  Style="{StaticResource  MaterialDesignFlatDarkBgButton}" Margin="0,30,0,0">Регистрация</Button>
+        </StackPanel>
+    </Grid>
+</Page>
