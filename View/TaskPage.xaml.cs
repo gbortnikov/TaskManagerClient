@@ -10,16 +10,17 @@ using System.Windows.Documents;
 using System.Windows.Input;
 using System.Windows.Media;
 using System.Windows.Media.Imaging;
+using System.Windows.Navigation;
 using System.Windows.Shapes;
 
 namespace TaskManagerClient.View
 {
     /// <summary>
-    /// Логика взаимодействия для WorkSpace.xaml
+    /// Логика взаимодействия для TaskPage.xaml
     /// </summary>
-    public partial class WorkSpace : Window
+    public partial class TaskPage : Page
     {
-        public WorkSpace()
+        public TaskPage()
         {
             InitializeComponent();
         }

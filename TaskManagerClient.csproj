@@ -178,6 +178,7 @@
     <Compile Include="ViewModel\MainViewModel.cs" />
     <Compile Include="ViewModel\RegViewModel.cs" />
     <Compile Include="ViewModel\StaffViewModel.cs" />
+    <Compile Include="ViewModel\TaskViewModel.cs" />
     <Compile Include="ViewModel\WorlSpaceViewModel.cs" />
     <Compile Include="View\AuthPage.xaml.cs">
       <DependentUpon>AuthPage.xaml</DependentUpon>
@@ -201,8 +202,11 @@
     <Compile Include="View\staffPage.xaml.cs">
       <DependentUpon>staffPage.xaml</DependentUpon>
     </Compile>
-    <Compile Include="View\WorkSpace.xaml.cs">
-      <DependentUpon>WorkSpace.xaml</DependentUpon>
+    <Compile Include="View\TaskPage.xaml.cs">
+      <DependentUpon>TaskPage.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\WorkSpaceWindow.xaml.cs">
+      <DependentUpon>WorkSpaceWindow.xaml</DependentUpon>
     </Compile>
     <Page Include="View\AuthPage.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -228,7 +232,11 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="View\WorkSpace.xaml">
+    <Page Include="View\TaskPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="View\WorkSpaceWindow.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

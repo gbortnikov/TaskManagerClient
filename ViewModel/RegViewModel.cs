@@ -95,7 +95,7 @@ namespace TaskManagerClient.ViewModel
                         Console.WriteLine("status={0}", RegStatus.status);
                         if (RegStatus.status == 1)
                         {
-                            InfoUserWindow infoWin = new InfoUserWindow();
+                            WorkSpaceWindow infoWin = new WorkSpaceWindow();
                             infoWin.Show();
                         }
                         else if (RegStatus.status == -1)
