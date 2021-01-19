@@ -45,6 +45,11 @@ namespace TaskManagerClient.BasicClasses
                 UserListStatus.status = answer.status;
                 UserListStatus.dataList = answer.dataList;
             }
+            else if (answer.command == "GETMYLISTPROJECT")
+            {
+                MyProjectListStatus.status = answer.status;
+                MyProjectListStatus.dataList = answer.dataList;
+            }
         }
     }
 

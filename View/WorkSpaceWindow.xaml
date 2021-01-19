@@ -7,7 +7,7 @@
         xmlns:vm="clr-namespace:TaskManagerClient.ViewModel"
         xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
         mc:Ignorable="d"
-        Title="WorkSpace" Height="560" Width="800">
+        Title="WorkSpace" Height="560" Width="1000">
     <Window.DataContext>
         <vm:WorlSpaceViewModel/>
     </Window.DataContext>
@@ -19,7 +19,8 @@
         </Grid.ColumnDefinitions>
         <StackPanel Grid.Column="0" Margin="10">
             <Button Command="{Binding ChangePageInfo}" Content="Личные Данные" Style="{StaticResource MaterialDesignFlatLightBgButton}" Margin="0,5"/>
-            <Button Command="{Binding ChangePageTask}" Content="Мои задачи"  Style="{StaticResource MaterialDesignFlatLightBgButton}" Margin="0,5"/>
+            <Button Command="{Binding ChangePageTask}" Content="Добавть задачу/проект"  Style="{StaticResource MaterialDesignFlatLightBgButton}" Margin="0,5"/>
+            <Button Command="{Binding ChangePageMyTasks}" Content="Мои задачи"  Style="{StaticResource MaterialDesignFlatLightBgButton}" Margin="0,5"/>
         </StackPanel>
         <StackPanel Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
             <Frame Content="{Binding CurrentPage }"  />

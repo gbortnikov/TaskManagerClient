@@ -207,6 +207,7 @@ namespace TaskManagerClient.ViewModel
                     JConvert<SNewUserProject> newUserPrjectJson = new JConvert<SNewUserProject>(sNewUserProject);
                     Console.WriteLine(newUserPrjectJson.Json);
                     wSocClient.Send(newUserPrjectJson.Json);
+                    SelectedUser = null;
                 });
             }
         }

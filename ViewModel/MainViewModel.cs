@@ -86,6 +86,7 @@ namespace TaskManagerClient.ViewModel
         {
             authPage = new AuthPage();
             regPage = new RegPage();
+
             CurrentPage = authPage;
 
         }

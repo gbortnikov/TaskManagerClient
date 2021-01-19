@@ -7,7 +7,7 @@
       xmlns:materialDesign="http://materialdesigninxaml.net/winfx/xaml/themes"
       xmlns:vm="clr-namespace:TaskManagerClient.ViewModel"
       mc:Ignorable="d" 
-      d:DesignHeight="516" d:DesignWidth="800"
+      d:DesignHeight="516" d:DesignWidth="600"
       Title="TaskPage">
     <Page.DataContext>
         <vm:TaskViewModel/>
@@ -35,10 +35,16 @@
                                 </StackPanel>
                             </Border>
                             <Border Margin="0,5" Background="#7B8EB2" BorderBrush="#2E4D8A" BorderThickness="3">
-                                <StackPanel>
-                                    <TextBlock Text="Выберите проект" Style="{StaticResource MaterialDesignBody2TextBlock}"/>
-                                    <ComboBox IsEditable="True" SelectedIndex="{Binding Path=ProjectId}" ItemsSource="{Binding Path=ProjectList}" Name="projects" Style="{StaticResource MaterialDesignComboBox}"/>
-
+                                <StackPanel Orientation="Horizontal">
+                                    <StackPanel Orientation="Vertical" Width="500">
+                                        <TextBlock Text="Выберите проект" Style="{StaticResource MaterialDesignBody2TextBlock}"/>
+                                        <ComboBox IsEditable="True" SelectedItem="{Binding Path=ProjectName}" ItemsSource="{Binding Path=ProjectList}" Name="projects" Style="{StaticResource MaterialDesignComboBox}"/>
+                                    </StackPanel>
+                                    <Button Margin="10,0" Command="{Binding Path=Update}"  Width="50" HorizontalAlignment="Right" Style="{StaticResource MaterialDesignFlatLightBgButton}">
+                                        <Button.Background>
+                                            <ImageBrush ImageSource="img_1601.png" Stretch="Uniform" TileMode="FlipXY"/>
+                                        </Button.Background>
+                                    </Button>
                                 </StackPanel>
                             </Border>
                             <Border Margin="0,5" Background="#7B8EB2" BorderBrush="#2E4D8A" BorderThickness="3">
@@ -77,9 +83,9 @@
                 <TabItem.Content>
                     <Grid >
 
-                        
+
                         <Frame Content="{Binding ProjectPage}"/>
-                
+
                     </Grid>
                 </TabItem.Content>
             </TabItem>

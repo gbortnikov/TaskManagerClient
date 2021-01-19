@@ -13,13 +13,12 @@ namespace TaskManagerClient.ViewModel
     {
         private Page currentPage;
         private InfoUserPage infoUserPage;
+        private MyTasksPage myTasksPage;
         private TaskPage taskPage;
+
         public Page CurrentPage
         {
-            get
-            {
-                return currentPage;
-            }
+            get{return currentPage;}
             set
             {
                 currentPage = value;
@@ -33,21 +32,28 @@ namespace TaskManagerClient.ViewModel
             {
                 return new DelegateCommand((args) =>
                 {
-
                     CurrentPage = infoUserPage;
-
                 });
             }
         }
+        public ICommand ChangePageMyTasks
+        {
+            get
+            {
+                return new DelegateCommand((args) =>
+                {
+                    CurrentPage = myTasksPage;
+                });
+            }
+        }
+
         public ICommand ChangePageTask
         {
             get
             {
                 return new DelegateCommand((args) =>
                 {
-
                     CurrentPage = taskPage;
-
                 });
             }
         }
@@ -57,6 +63,8 @@ namespace TaskManagerClient.ViewModel
         {
             infoUserPage = new InfoUserPage();
             taskPage = new TaskPage();
+            myTasksPage = new MyTasksPage();
+
             CurrentPage = infoUserPage;
         }
     }
