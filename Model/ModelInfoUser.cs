@@ -30,8 +30,8 @@ namespace TaskManagerClient.Model
         public string surname;
         public int age;
         public bool gender =true;
-        public string birthDate;
-        public string dateReg;
+        public DateTime birthDate;
+        public DateTime dateReg;
         public DateTime GetDateReg()
         {
             return DateTime.Now;

@@ -53,12 +53,11 @@ namespace TaskManagerClient.ViewModel
         }
 
 
-        public WorlSpaceViewModel(){
+        public WorlSpaceViewModel()
+        {
             infoUserPage = new InfoUserPage();
             taskPage = new TaskPage();
             CurrentPage = infoUserPage;
-            }
-
-
+        }
     }
 }

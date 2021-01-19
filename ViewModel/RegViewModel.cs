@@ -84,7 +84,7 @@ namespace TaskManagerClient.ViewModel
                         CheckLogin = "";
                         CheckPassword = "";
 
-                        JConvert regJson = new JConvert(reg);
+                        JConvert<Reg> regJson = new JConvert<Reg>(reg);
                         Global.myLogin = reg.login;
                         wSocClient.Send(regJson.Json);
                         while (RegStatus.status == 0)

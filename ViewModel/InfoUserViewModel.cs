@@ -103,13 +103,13 @@ namespace TaskManagerClient.ViewModel
                         if (info.GetDateReg().Day - dateOfBirth.GetDate().Day < 0)
                             age -= 1;
 
-                    info.birthDate = dateOfBirth.GetDate().ToString();
-                    info.dateReg = info.GetDateReg().ToString();
+                    info.birthDate = dateOfBirth.GetDate();
+                    info.dateReg = info.GetDateReg();
                     info.age = age;
                     info.login = Global.myLogin;
 
 
-                    JConvert infoJson = new JConvert(info);
+                    JConvert<Info> infoJson = new JConvert<Info>(info);
                     Console.WriteLine(infoJson.Json);
                     wSocClient.Send(infoJson.Json);
                     while (InfoStatus.status == 0)

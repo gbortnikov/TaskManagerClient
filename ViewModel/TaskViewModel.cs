@@ -1,41 +1,42 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Windows.Controls;
 using System.Windows.Input;
 using TaskManagerClient.BasicClasses;
+using TaskManagerClient.View;
 
 namespace TaskManagerClient.ViewModel
 {
-    public struct Task
+    public class Task_
     {
+        public string command = "NEWTASK";
         public string login;
         public string name;
         public string discription;
-        public string projectId;
-        public List<string> projectList;
-        public DateTime startTime;
-        public DateTime endTime;
+        public int projectId;
+        //public List<string> projectList;
+        public DateTime startDate;
+        public DateTime endDate;
     }
 
     class TaskViewModel : BaseViewModel
     {
         private WSocClient wSocClient = WSocClient.getInstance();
-        private Task task = new Task();
+        private Task_ task = new Task_();
+        private NewProjectPage projectPage = new NewProjectPage();
 
-        public TaskViewModel()
+
+        public Page ProjectPage
         {
-            task.projectList = new List<string>()
+            get
             {
-                "project1","project2","project333333"
-            };
+                return projectPage;
+            }
         }
-        public List<string> ProjectList
-        {
-            get { return task.projectList; }
-        }
-        public string ProjectId
+
+
+
+        public int ProjectId
         {
             get { return task.projectId; }
             set
@@ -63,32 +64,33 @@ namespace TaskManagerClient.ViewModel
                 OnPropertyChanged();
             }
         }
-        public DateTime StartTime
+        public DateTime StartDate
         {
-            get { return task.startTime; }
+            get { return task.startDate; }
             set
             {
-                task.startTime = value;
+                task.startDate = value;
                 OnPropertyChanged();
             }
         }
 
-        public DateTime EndTime
+        public DateTime EndDate
         {
-            get { return task.endTime; }
+            get { return task.endDate; }
             set
             {
-                task.endTime = value;
+                task.endDate = value;
                 OnPropertyChanged();
             }
         }
 
         private void Clear()
         {
-            EndTime = DateTime.Now;
-            StartTime = DateTime.Now;
+            EndDate = DateTime.Now;
+            StartDate = DateTime.Now;
             Name = null;
             Discription = null;
+            ProjectId = -1;
         }
 
         public ICommand SendToServer
@@ -98,15 +100,15 @@ namespace TaskManagerClient.ViewModel
                 return new DelegateCommand((args) =>
                 {
                     Console.WriteLine(task.projectId);
-                    Clear();
                     task.login = Global.myLogin;
-                    JConvert taskJson = new JConvert(task);
+                    JConvert<Task_> taskJson = new JConvert<Task_>(task);
                     Console.WriteLine(taskJson.Json);
                     wSocClient.Send(taskJson.Json);
                     //while (InfoStatus.status == 0)
                     //{
                     //    Thread.Sleep(5);
                     //}
+                    Clear();
 
                 });
             }

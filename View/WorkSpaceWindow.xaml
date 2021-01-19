@@ -11,7 +11,7 @@
     <Window.DataContext>
         <vm:WorlSpaceViewModel/>
     </Window.DataContext>
-    <Grid ShowGridLines="True">
+    <Grid ShowGridLines="True" >
 
         <Grid.ColumnDefinitions>
             <ColumnDefinition Width="200"/>
@@ -20,12 +20,9 @@
         <StackPanel Grid.Column="0" Margin="10">
             <Button Command="{Binding ChangePageInfo}" Content="Личные Данные" Style="{StaticResource MaterialDesignFlatLightBgButton}" Margin="0,5"/>
             <Button Command="{Binding ChangePageTask}" Content="Мои задачи"  Style="{StaticResource MaterialDesignFlatLightBgButton}" Margin="0,5"/>
-
-
-
         </StackPanel>
-        <StackPanel Grid.Column="1" Background="Gray">
-            <Frame Content="{Binding CurrentPage }" />
+        <StackPanel Grid.Column="1" Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}">
+            <Frame Content="{Binding CurrentPage }"  />
         </StackPanel>
     </Grid>
 </Window>

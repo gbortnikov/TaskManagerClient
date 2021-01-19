@@ -176,6 +176,7 @@
     <Compile Include="ViewModel\DelegateCommand.cs" />
     <Compile Include="ViewModel\InfoUserViewModel.cs" />
     <Compile Include="ViewModel\MainViewModel.cs" />
+    <Compile Include="ViewModel\NewProjectViewModel.cs" />
     <Compile Include="ViewModel\RegViewModel.cs" />
     <Compile Include="ViewModel\StaffViewModel.cs" />
     <Compile Include="ViewModel\TaskViewModel.cs" />
@@ -191,6 +192,9 @@
     </Compile>
     <Compile Include="View\MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="View\NewProjectPage.xaml.cs">
+      <DependentUpon>NewProjectPage.xaml</DependentUpon>
     </Compile>
     <Compile Include="View\RegPage.xaml.cs">
       <DependentUpon>RegPage.xaml</DependentUpon>
@@ -223,6 +227,10 @@
     <Page Include="View\MainWindow.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
+    </Page>
+    <Page Include="View\NewProjectPage.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="View\RegPage.xaml">
       <Generator>MSBuild:Compile</Generator>

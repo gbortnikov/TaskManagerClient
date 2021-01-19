@@ -5,8 +5,6 @@ VisualStudioVersion = 16.0.30804.86
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerClient", "TaskManagerClient.csproj", "{A69066FD-9D6F-4C75-9049-63C59B56ECB2}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "TaskManagerServer", "..\TaskManagerServer\TaskManagerServer.csproj", "{685462A1-2696-49D2-A7BD-18818C77A848}"
-EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "event", "..\..\примеры\event\event.csproj", "{2AD75F94-3FBE-4A10-9811-B0C6F28F071A}"
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "test", "..\..\примеры\test\test.csproj", "{7AF8A370-2363-45BC-8AB6-8FEF976E4C71}"
@@ -27,14 +25,6 @@ Global
 		{A69066FD-9D6F-4C75-9049-63C59B56ECB2}.Release|Any CPU.Build.0 = Release|Any CPU
 		{A69066FD-9D6F-4C75-9049-63C59B56ECB2}.Release|x86.ActiveCfg = Release|Any CPU
 		{A69066FD-9D6F-4C75-9049-63C59B56ECB2}.Release|x86.Build.0 = Release|Any CPU
-		{685462A1-2696-49D2-A7BD-18818C77A848}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
-		{685462A1-2696-49D2-A7BD-18818C77A848}.Debug|Any CPU.Build.0 = Debug|Any CPU
-		{685462A1-2696-49D2-A7BD-18818C77A848}.Debug|x86.ActiveCfg = Debug|Any CPU
-		{685462A1-2696-49D2-A7BD-18818C77A848}.Debug|x86.Build.0 = Debug|Any CPU
-		{685462A1-2696-49D2-A7BD-18818C77A848}.Release|Any CPU.ActiveCfg = Release|Any CPU
-		{685462A1-2696-49D2-A7BD-18818C77A848}.Release|Any CPU.Build.0 = Release|Any CPU
-		{685462A1-2696-49D2-A7BD-18818C77A848}.Release|x86.ActiveCfg = Release|Any CPU
-		{685462A1-2696-49D2-A7BD-18818C77A848}.Release|x86.Build.0 = Release|Any CPU
 		{2AD75F94-3FBE-4A10-9811-B0C6F28F071A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
 		{2AD75F94-3FBE-4A10-9811-B0C6F28F071A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{2AD75F94-3FBE-4A10-9811-B0C6F28F071A}.Debug|x86.ActiveCfg = Debug|Any CPU

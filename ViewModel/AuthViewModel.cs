@@ -55,7 +55,7 @@ namespace TaskManagerClient.ViewModel
                 return new DelegateCommand((args) =>
                 {
                     auth.password = ((PasswordBox)args).Password;
-                    JConvert jConvert = new JConvert(auth);
+                    JConvert<Auth> jConvert = new JConvert<Auth>(auth);
                     AuthStatus.status = 0;
                     wSocClient.Send(jConvert.Json);
                     CheckLogin = "";

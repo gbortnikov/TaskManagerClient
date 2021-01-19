@@ -16,11 +16,11 @@
 
     <Grid Background="{DynamicResource {x:Static SystemColors.ScrollBarBrushKey}}" Margin="0,0,0,-7" >
         <TabControl>
-            <TabItem x:Name="ToDo">
+            <TabItem x:Name="Task">
                 <TabItem.Header  >
                     <StackPanel Orientation="Horizontal" >
                         <Ellipse Height="5" Width="5" Fill="Black" />
-                        <TextBlock Text="Добавить" Margin="3"/>
+                        <TextBlock Text="Добавить Задачу" Margin="3"/>
                     </StackPanel>
                 </TabItem.Header>
                 <TabItem.Content >
@@ -49,11 +49,11 @@
                                     </Grid.ColumnDefinitions>
                                     <StackPanel Orientation="Vertical" Grid.Column="0" Width="400">
                                         <TextBlock Text="Выберите дату начала выполнения задания"  Style="{StaticResource MaterialDesignBody2TextBlock}"/>
-                                        <Calendar SelectedDate="{Binding Path=StartTime}" IsTodayHighlighted="False" Margin="10,0" x:Name="calendar1" FirstDayOfWeek="Monday"  Style="{x:Null}" HorizontalAlignment="Left" />
+                                        <Calendar SelectedDate="{Binding Path=StartDate}" IsTodayHighlighted="False" Margin="10,0" x:Name="calendar1" FirstDayOfWeek="Monday"  Style="{x:Null}" HorizontalAlignment="Left" />
                                     </StackPanel>
                                     <StackPanel Orientation="Vertical" Width="400" Grid.Column="1">
                                         <TextBlock TextWrapping="Wrap" Text="Выберите дату завершения задания"  Style="{StaticResource MaterialDesignBody2TextBlock}"/>
-                                        <Calendar SelectedDate="{Binding Path=EndTime}" IsTodayHighlighted="False" Margin="10,0" x:Name="calendar2" FirstDayOfWeek="Monday"  Style="{x:Null}" HorizontalAlignment="Left" />
+                                        <Calendar SelectedDate="{Binding Path= EndDate}" IsTodayHighlighted="False" Margin="10,0" x:Name="calendar2" FirstDayOfWeek="Monday"  Style="{x:Null}" HorizontalAlignment="Left" />
                                     </StackPanel>
                                 </Grid>
                             </Border>
@@ -62,6 +62,31 @@
                     </Grid>
                 </TabItem.Content>
             </TabItem>
+
+
+
+
+
+            <TabItem>
+                <TabItem.Header  >
+                    <StackPanel Orientation="Horizontal" >
+                        <Ellipse Height="5" Width="5" Fill="Black" />
+                        <TextBlock Text="Добавить Проект" Margin="3"/>
+                    </StackPanel>
+                </TabItem.Header>
+                <TabItem.Content>
+                    <Grid >
+
+                        
+                        <Frame Content="{Binding ProjectPage}"/>
+                
+                    </Grid>
+                </TabItem.Content>
+            </TabItem>
+
+
+
+
         </TabControl>
     </Grid>
 </Page>

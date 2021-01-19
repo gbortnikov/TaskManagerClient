@@ -6,24 +6,44 @@ using TaskManagerClient.ViewModel;
 
 namespace TaskManagerClient.BasicClasses
 {
+    class Answer
+    {
+        public string command;
+        public int status;
+        public List<string> dataList;
+    }
 
     class ResponseWs
     {
         public ResponseWs(string res)
         {
-            var answer = JsonConvert.DeserializeObject<Dictionary<string, string>>(res);
-            Console.WriteLine(answer["command"], answer["status"]);
-            if (answer["command"] == "AUTH")
+            Answer answer = JsonConvert.DeserializeObject<Answer>(res);
+            Console.WriteLine(answer.command, answer.status);
+            if (answer.command == "AUTH")
             {
-                AuthStatus.status = int.Parse( answer["status"]);
+                AuthStatus.status = answer.status;
             }
-            else if (answer["command"] == "REG")
+            else if (answer.command == "REG")
             {
-                RegStatus.status = int.Parse(answer["status"]);
+                RegStatus.status = answer.status;
             }
-            else if (answer["command"] == "INFO")
+            else if (answer.command == "INFO")
             {
-                InfoStatus.status = int.Parse(answer["status"]);
+                InfoStatus.status = answer.status;
+            }
+            else if (answer.command == "NEWPROJECT")
+            {
+                NewProjectStatus.status = answer.status;
+            }
+            else if (answer.command == "GETLISTPROJECT")
+            {
+                ProjectListStatus.status = answer.status;
+                ProjectListStatus.dataList = answer.dataList;
+            }
+            else if (answer.command == "GETLISTUSER")
+            {
+                UserListStatus.status = answer.status;
+                UserListStatus.dataList = answer.dataList;
             }
         }
     }
